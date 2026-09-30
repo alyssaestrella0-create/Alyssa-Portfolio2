@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import { ArrowUpRight, X, Ticket, Robot, FlowArrow, CursorClick } from '@/components/slab'
 import { FlowIcon, PlanIcon, GlobeIcon, SparkIcon, DeviceIcon } from './ProjectIcons'
 import { AutomationsPanel, PlanPanel, TicketingPanel, FrameworkPanel, WorkflowPanel, BarrelPanel, AIWindow, AppsWindow } from './ProjectPanels'
-import { gymFunnel, bookingFunnel, websiteFunnel, type Funnel } from '@/data/funnels'
 import { mobileApps } from '@/data/projects'
 import { aiStack, type StackNode } from '@/data/ai-stack'
 import { useIsPhone } from '@/hooks/useMediaQuery'
@@ -61,13 +60,11 @@ const WF_SHOTS = [
   OLD + 'sop%20playbook.png',
 ]
 
-const FUNNEL_SHOTS = [gymFunnel[0], bookingFunnel[0], websiteFunnel[0]].filter(Boolean)
-const thumbSrc = (f: Funnel) => `/${f.dir ?? 'funnels'}/thumbs/${f.file.replace('.html', '.jpeg')}`
 
 const APP_SHOTS = [
   ...mobileApps.map((a) => a.imageSrc).filter((s): s is string => !!s),
-  '/placeholders/extension-1.jpg',
-  '/placeholders/extension-2.jpg',
+  OLD + 'websitehomepage.png',
+  OLD + 'leadlist.png',
 ]
 
 const BUILD_DESC = 'Selected examples of the operational, customer, CRM, documentation, and digital work I support.'
@@ -103,13 +100,13 @@ function WorkflowsPreview() {
 function PlanPreview() {
   return (
     <div className="bento__media bento__doc" aria-hidden="true">
-      <span className="bento__doc-eyebrow">Placeholder document</span>
-      <span className="bento__doc-title">Your document title here.</span>
+      <span className="bento__doc-eyebrow">Process documentation</span>
+      <span className="bento__doc-title">SOPs, checklists & trackers</span>
       <span className="bento__doc-flow">
-        <i>Step</i>
-        <i>Step</i>
-        <i>Step?</i>
-        <i className="is-on">Result</i>
+        <i>Capture</i>
+        <i>Document</i>
+        <i>Follow up</i>
+        <i className="is-on">Complete</i>
       </span>
       <span className="bento__doc-line" />
       <span className="bento__doc-line bento__doc-line--short" />
@@ -119,11 +116,12 @@ function PlanPreview() {
 
 /** The three builds as Open Builds rows: plate, eyebrow, title, arrow. */
 function FunnelsPreview() {
+  const shots = [OLD + 'websitehomepage.png', OLD + 'phoenixseopage.png', OLD + 'yelplisting.png']
   return (
     <div className="bento__media bento__fan" aria-hidden="true">
-      {FUNNEL_SHOTS.map((f, i) => (
-        <span key={f.file} className="bento__photo bento__photo--page" style={{ ['--i' as string]: i }}>
-          <img src={thumbSrc(f)} alt="" loading="lazy" decoding="async" />
+      {shots.map((src, i) => (
+        <span key={src} className="bento__photo bento__photo--page" style={{ ['--i' as string]: i }}>
+          <img src={src} alt="" loading="lazy" decoding="async" />
         </span>
       ))}
     </div>
