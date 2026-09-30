@@ -32,8 +32,7 @@ import { useMemo } from 'react'
 
 type Tool = {
   name: string
-  iconPath: string
-  /** When set, the SVG silhouette is tinted via CSS mask. Omit for multi-color marks. */
+  iconPath?: string
   color?: string
 }
 
@@ -42,14 +41,14 @@ export const tools: Tool[] = [
   { name: 'Intercom', iconPath: '/icons/intercom.svg', color: '#1F8DED' },
   { name: 'Slack', iconPath: '/icons/slack.svg', color: '#611F69' },
   { name: 'ChatGPT', iconPath: '/icons/openai.svg', color: '#111827' },
-  { name: 'Canva', iconPath: '/icons/ai/googlechrome.svg', color: '#00A4E4' },
-  { name: 'Wix', iconPath: '/icons/ai/googlechrome.svg', color: '#111827' },
-  { name: 'ServiceCore', iconPath: '/icons/ai/googlechrome.svg', color: '#2563EB' },
-  { name: 'REsimpli', iconPath: '/icons/ai/googlechrome.svg', color: '#7C3AED' },
-  { name: 'Notion', iconPath: '/icons/ai/googlechrome.svg', color: '#111827' },
-  { name: 'Microsoft Office', iconPath: '/icons/ai/googlechrome.svg', color: '#D83B01' },
-  { name: 'Meta Business Suite', iconPath: '/icons/ai/googlechrome.svg', color: '#0866FF' },
-  { name: 'Airbnb & Vrbo', iconPath: '/icons/ai/googlechrome.svg', color: '#FF385C' },
+  { name: 'Canva' },
+  { name: 'Wix' },
+  { name: 'ServiceCore' },
+  { name: 'REsimpli' },
+  { name: 'Notion' },
+  { name: 'Microsoft Office' },
+  { name: 'Meta Business Suite' },
+  { name: 'Airbnb & Vrbo' },
 ]
 
 export default function ToolsMarquee() {
@@ -61,7 +60,7 @@ export default function ToolsMarquee() {
     <section className="tools-marquee" aria-label="Tools I work with" data-reveal>
       <div className="tools-marquee__track" aria-hidden="true">
         {doubled.map((tool, i) => {
-          const useMask = tool.iconPath.endsWith('.svg') && !!tool.color
+          const useMask = !!tool.iconPath && tool.iconPath.endsWith('.svg') && !!tool.color
           return (
             <div key={`${tool.name}-${i}`} className="tools-marquee__item">
               {/* A plain box on desktop (display: contents); on phones it is
@@ -69,24 +68,11 @@ export default function ToolsMarquee() {
                   own background, so the tile needs its own element. */}
               <span className="tools-marquee__tile">
                 {useMask ? (
-                  <span
-                    className="tools-marquee__icon"
-                    style={{
-                      ['--icon-url' as string]: `url('${tool.iconPath}')`,
-                      ['--brand-color' as string]: tool.color ?? 'var(--navy)',
-                    }}
-                  />
+                  <span className="tools-marquee__icon" style={{ ['--icon-url' as string]: `url('${tool.iconPath}')`, ['--brand-color' as string]: tool.color ?? 'var(--navy)' }} />
+                ) : tool.iconPath ? (
+                  <img className="tools-marquee__img" src={tool.iconPath} alt="" aria-hidden="true" loading="lazy" decoding="async" width={20} height={20} />
                 ) : (
-                  <img
-                    className="tools-marquee__img"
-                    src={tool.iconPath}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    width={20}
-                    height={20}
-                  />
+                  <span aria-hidden="true" style={{ fontWeight: 700, fontSize: 12 }}>{tool.name.slice(0, 2).toUpperCase()}</span>
                 )}
               </span>
               <span className="tools-marquee__label">{tool.name}</span>
