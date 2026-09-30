@@ -31,17 +31,14 @@ export default function ShowcaseGrid() {
             <span aria-hidden="true" className="ktools__vote-dot" />
             <span className="ktools__vote-ask">Operations</span>
           </p>
-          <a className="ktools__vote-frame ktools__vote-card" href="#">
-            <img src="/placeholders/badge.svg" alt="" width="48" height="48" />
-            <span className="ktools__vote-text">
-              Customer support · CRM · Admin · Digital
-            </span>
-          </a>
+          <div className="ktools__vote-frame ktools__vote-card">
+            <span className="ktools__vote-text">Customer support · CRM · Admin · Digital</span>
+          </div>
         </div>
       </header>
 
       <div className="home__glass ktools__glass">
-        <Flagship eyebrow="Flagship build" />
+        <Flagship eyebrow="Workflow demo" />
       </div>
     </section>
   )
