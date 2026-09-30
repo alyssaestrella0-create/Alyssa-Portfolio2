@@ -109,8 +109,7 @@ export default function ThankYou() {
           <span className="thankyou__eyebrow">Message received</span>
           <h1 className="thankyou__heading">Got it. Talk soon.</h1>
           <p className="thankyou__body">
-            I'll review your message and follow up within 24 hours with next steps and a booking link.
-            Check your inbox - and your spam folder just in case.
+            Thanks for reaching out. I'll review your message and get back to you by email as soon as I can.
           </p>
 
           <div className="thankyou__countdown" aria-live="polite" aria-atomic="true">
