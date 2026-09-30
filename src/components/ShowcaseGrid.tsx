@@ -15,10 +15,10 @@ export default function ShowcaseGrid() {
         <div className="ktools__head-copy">
           <span className="pgrid__eyebrow">Showcase</span>
           <h1 className="pgrid__title" id="showcase-title">
-            Your flagship product, and the people using it.
+            A closer look at how I organize operational work.
           </h1>
           <p className="pgrid__lede">
-            PLACEHOLDER - tell me what to put here: one line on what this product is and why a visitor should look at it.
+            This interactive section shows the way I think about tasks, records, follow-ups, research, and day-to-day business support.
           </p>
         </div>
 
@@ -27,14 +27,14 @@ export default function ShowcaseGrid() {
             listing, and point the link at it. */}
         <div className="ktools__vote">
           <p className="ktools__vote-label">
-            Featured on
+            Focus
             <span aria-hidden="true" className="ktools__vote-dot" />
-            <span className="ktools__vote-ask">Placeholder</span>
+            <span className="ktools__vote-ask">Operations</span>
           </p>
           <a className="ktools__vote-frame ktools__vote-card" href="#">
             <img src="/placeholders/badge.svg" alt="" width="48" height="48" />
             <span className="ktools__vote-text">
-              PLACEHOLDER - a badge, award or launch link
+              Customer support · CRM · Admin · Digital
             </span>
           </a>
         </div>
