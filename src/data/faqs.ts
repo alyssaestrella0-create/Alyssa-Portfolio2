@@ -1,30 +1,24 @@
 export type QA = { q: string; a: string }
 
-/**
- * The questions people ask before they email. One list, used by the FAQ
- * accordion on the Contact view (and the legacy long-scroll FAQ section).
- * Five questions, two or three sentences each: the accordion sits in a
- * fixed panel and more than that pushes the email row off the plate.
- */
 export const FAQS: QA[] = [
   {
-    q: 'What do you do?',
-    a: 'PLACEHOLDER - tell me what to put here: the kinds of work you take on, and who it is usually for.',
+    q: 'What kind of work do you handle?',
+    a: 'I support customer communication, day-to-day operations, CRM and lead management, scheduling, follow-ups, documentation, research, and digital support. My experience spans U.S.-based field service, vacation rentals, real estate, coaching, e-commerce, and financial customer support.',
   },
   {
-    q: 'How fast can you start?',
-    a: 'PLACEHOLDER - tell me what to put here: your usual lead time for small fixes vs. larger projects, and your working hours.',
+    q: 'Which tools have you worked with?',
+    a: 'My hands-on tools include ServiceCore, REsimpli, Intercom, Notion, Google Workspace, Microsoft Office, Wix, Canva, Meta Business Suite, Airbnb, Vrbo, Slack, and AI tools such as ChatGPT, Claude, and Gemini.',
   },
   {
-    q: 'How much do you charge?',
-    a: 'PLACEHOLDER - tell me what to put here: how you price (hourly, per project, retainer) and how a quote is put together.',
+    q: 'Can you work independently?',
+    a: 'Yes. I am used to managing recurring tasks, customer and vendor follow-ups, CRM updates, research, documentation, and daily priorities with minimal supervision while escalating issues when needed.',
   },
   {
     q: 'Where are you based?',
-    a: 'PLACEHOLDER - tell me what to put here: your location or timezone, and which client timezones you overlap with.',
+    a: 'I am based in Metro Manila, Philippines (GMT+8) and have experience supporting international and U.S.-based clients remotely.',
   },
   {
     q: 'What happens after I write?',
-    a: 'PLACEHOLDER - tell me what to put here: how fast you reply and what the next step looks like.',
+    a: 'Send a short note about the role, workflow, or problem you need help with. I can then discuss the responsibilities, tools, schedule, and how my experience fits your team.',
   },
 ]
