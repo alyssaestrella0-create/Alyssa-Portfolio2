@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter, Link } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { profile } from './data/profile'
 import './styles/tokens.css'
 import './styles/global.css'
