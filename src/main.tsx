@@ -1,60 +1,57 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { HashRouter } from 'react-router-dom'
 import { profile } from './data/profile'
 import './styles/tokens.css'
 import './styles/global.css'
+import './styles/portfolio.css'
 
-const OLD = 'https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/'
-const samples = [
-  ['Field Service Operations & Dispatch', 'servicecore%20schedule.png', 'ServiceCore scheduling, customer communication, technician coordination, estimates, invoices, payment follow-up, and daily operational support.'],
-  ['Real Estate CRM & Lead Management', 'resimplicrm.png', 'REsimpli pipeline upkeep, contact and lead-stage updates, drip campaigns, follow-up support, contract information, and property listing support.'],
-  ['SOPs, Trackers & Process Support', 'sop%20playbook.png', 'SOPs, checklists, training materials, trackers, daily reports, and recurring workflows that keep work organized.'],
-  ['Website & Local SEO Support', 'websitehomepage.png', 'Wix updates, service-area content, Google Business Profile support, local listings, metadata, indexing, and SEO tracking.'],
+const OLD='https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/'
+const work=[
+ ['Field Service Operations','Operations & Customer Support','servicecore%20schedule.png','ServiceCore · Scheduling · Customers'],
+ ['Real Estate Operations','Real Estate Virtual Assistant','resimplicrm.png','REsimpli · Leads · Follow-up'],
+ ['Process Documentation','SOPs & Workflow Support','sop%20playbook.png','SOPs · Checklists · Trackers'],
+ ['Website & Local SEO','Digital Support','websitehomepage.png','Wix · SEO · Listings'],
 ]
-
-function Portfolio() {
-  return <main style={{maxWidth:1120,margin:'0 auto',padding:'48px 24px 80px',fontFamily:'Inter,system-ui,sans-serif',color:'#171614'}}>
-    <section style={{display:'grid',gridTemplateColumns:'1.5fr 1fr',gap:40,alignItems:'center',minHeight:'72vh'}}>
-      <div>
-        <p style={{fontSize:14,fontWeight:700,letterSpacing:1.2,textTransform:'uppercase'}}>Customer Support & Business Operations Specialist</p>
-        <h1 style={{fontSize:'clamp(48px,7vw,88px)',lineHeight:.95,margin:'20px 0 28px',letterSpacing:-3}}>Supporting customers.<br/>Keeping operations moving.</h1>
-        <p style={{fontSize:20,lineHeight:1.65,maxWidth:720}}>I help service businesses and remote teams stay organized behind the scenes—from customer communication and CRM management to scheduling, technician coordination, follow-ups, documentation, and digital support.</p>
-        <a href="mailto:alyssaestrella0@gmail.com" style={{display:'inline-block',marginTop:28,padding:'14px 20px',background:'#171614',color:'white',borderRadius:999,textDecoration:'none',fontWeight:700}}>Get in touch</a>
-      </div>
-      <img src={profile.avatarSrc} alt="Alyssa Mae Estrella" style={{width:'100%',maxWidth:380,justifySelf:'center',borderRadius:28,objectFit:'cover'}}/>
-    </section>
-
-    <section style={{padding:'64px 0'}}>
-      <p style={{fontWeight:700,textTransform:'uppercase',letterSpacing:1}}>How I support teams</p>
-      <h2 style={{fontSize:42,margin:'12px 0 30px'}}>Customer experience meets day-to-day operations.</h2>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:16}}>
-        {['Customer Support','Business Operations','CRM & Lead Support','Admin & Executive Support','Digital Support'].map(x=><div key={x} style={{padding:24,border:'1px solid #ddd5cc',borderRadius:18,background:'#f7f4ef',fontWeight:700,fontSize:18}}>{x}</div>)}
-      </div>
-    </section>
-
-    <section style={{padding:'64px 0'}}>
-      <p style={{fontWeight:700,textTransform:'uppercase',letterSpacing:1}}>Selected work</p>
-      <h2 style={{fontSize:42,margin:'12px 0 30px'}}>Real systems and work samples.</h2>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))',gap:24}}>
-        {samples.map(([title,img,desc])=><article key={title} style={{border:'1px solid #ddd5cc',borderRadius:22,overflow:'hidden',background:'#fff'}}>
-          <img src={OLD+img} alt={title} style={{width:'100%',height:220,objectFit:'cover',display:'block'}}/>
-          <div style={{padding:24}}><h3 style={{fontSize:23,margin:'0 0 12px'}}>{title}</h3><p style={{lineHeight:1.65,margin:0}}>{desc}</p></div>
-        </article>)}
-      </div>
-    </section>
-
-    <section style={{padding:'64px 0',display:'grid',gridTemplateColumns:'1fr 1fr',gap:36}}>
-      <div><p style={{fontWeight:700,textTransform:'uppercase',letterSpacing:1}}>About</p><h2 style={{fontSize:42,margin:'12px 0 20px'}}>Hi, I’m Alyssa.</h2></div>
-      <div style={{fontSize:18,lineHeight:1.75}}><p>I’m a Customer Support & Business Operations Specialist with 4+ years of experience supporting international customers, U.S.-based businesses, and remote teams.</p><p>My work sits where customer experience and day-to-day operations meet: keeping communication clear, CRM records accurate, schedules moving, follow-ups completed, and processes documented.</p></div>
-    </section>
-
-    <section style={{padding:'64px 0',borderTop:'1px solid #ddd5cc'}}>
-      <h2 style={{fontSize:42,margin:'0 0 16px'}}>Need reliable support behind the scenes?</h2>
-      <p style={{fontSize:18}}>Based in Metro Manila, Philippines · Available for remote opportunities.</p>
-      <a href="mailto:alyssaestrella0@gmail.com" style={{fontSize:20,fontWeight:700,color:'inherit'}}>alyssaestrella0@gmail.com</a>
-    </section>
+const tools=['ServiceCore','REsimpli','Intercom','Google Workspace','Notion','Slack','Wix','Canva','Meta Business Suite','Airbnb & Vrbo']
+const services=[
+ ['Customer Support','Email · Chat · Follow-up'],
+ ['Business Operations','Scheduling · Coordination'],
+ ['CRM & Lead Support','Records · Pipelines · Leads'],
+ ['Admin & Executive Support','Research · SOPs · Reporting'],
+ ['Digital Support','Wix · SEO · Social'],
+]
+function Portfolio(){
+ return <div className="pf">
+  <aside className="pf-rail">
+   <img className="pf-avatar" src={profile.avatarSrc} alt="Alyssa Mae Estrella"/>
+   <h2>Alyssa Mae Estrella <span>✓</span></h2><p className="pf-handle">@alyssaestrella</p>
+   <p className="pf-role">Customer Support &<br/>Business Operations</p>
+   <nav>
+    <a href="#home">⌂ <b>Home</b></a><a href="#work">▱ Work</a><a href="#services">◇ Services</a><a href="#experience">☆ Experience</a><a href="#about">♙ About</a><a href="#contact">○ Contact</a>
+   </nav>
+   <div className="pf-rail-foot">Metro Manila, Philippines<br/>GMT+8 · Remote</div>
+  </aside>
+  <main className="pf-main">
+   <section id="home" className="pf-hero">
+    <div><p className="eyebrow">CUSTOMER SUPPORT & BUSINESS OPERATIONS SPECIALIST</p><h1>Supporting customers.<br/>Keeping operations moving.</h1><p className="lede">I help service businesses and remote teams stay organized behind the scenes—from customer communication and CRM management to scheduling, technician coordination, follow-ups, documentation, and digital support.</p></div>
+    <a className="pill" href="mailto:alyssaestrella0@gmail.com">Get in touch ↗</a>
+   </section>
+   <section className="toolbar"><div><small>DAILY DRIVERS</small><b>Tools I work with</b></div><div className="toolscroll">{tools.map(t=><span key={t}>{t}</span>)}</div></section>
+   <section id="work" className="dashboard">
+    <article className="card projects"><div className="cardhead"><h3>▣ Selected Work</h3><p>Real systems and operational work samples.</p></div><div className="thumbgrid">{work.map(([a,b,img])=><div className="thumb" key={a}><img src={OLD+img}/><b>{a}</b><small>{b}</small></div>)}</div></article>
+    <article id="about" className="card about"><h3>● About</h3><p>I support customers and day-to-day business operations with clear communication, accurate records, organized follow-ups, and documented processes.</p><img src={profile.avatarSrc}/><a href="#aboutdetail">More about me →</a></article>
+    <article className="card systems"><h3>▦ Core Systems</h3><p>Platforms I use in real operations.</p><div className="chips">{['ServiceCore','REsimpli','Intercom','Notion','Wix','Google Workspace'].map(x=><span key={x}>{x}</span>)}</div></article>
+    <article className="card credential"><h3>◎ Experience</h3><div className="badge">4+</div><b>Years of customer & admin support</b><p>International customers · U.S. businesses · Remote teams</p></article>
+    <article id="services" className="card servicecard"><h3>▱ Services</h3>{services.map(([a,b],i)=><div className="service" key={a}><span>{a}<small>{b}</small></span><em>0{i+1}</em></div>)}</article>
+    <article id="experience" className="card experience"><h3>❞ Experience</h3>{work.slice(0,3).map(([a,b,,d])=><div className="exp" key={a}><b>{a}</b><span>{b}</span><small>{d}</small></div>)}</article>
+   </section>
+   <section id="aboutdetail" className="detail">
+    <div><p className="eyebrow">ABOUT</p><h2>Hi, I’m Alyssa.</h2></div>
+    <div><p>I’m a Customer Support & Business Operations Specialist with 4+ years of experience supporting international customers, U.S.-based businesses, and remote teams.</p><p>My work sits where customer experience and day-to-day operations meet: keeping communication clear, CRM records accurate, schedules moving, follow-ups completed, and processes documented.</p><p>I’ve supported field service operations, vacation rentals, real estate lead management, executive and community support, customer service, social media, and administrative workflows.</p></div>
+   </section>
+   <section id="contact" className="contact"><p className="eyebrow">LET'S WORK TOGETHER</p><h2>Need reliable support behind the scenes?</h2><p>For customer support, operations, CRM, admin, or digital support opportunities, send me an email.</p><a className="pill" href="mailto:alyssaestrella0@gmail.com">alyssaestrella0@gmail.com ↗</a></section>
+   <footer><b>Alyssa Mae Estrella</b><span>Customer Support & Business Operations Specialist</span><span>© 2026 Alyssa Mae Estrella</span></footer>
   </main>
+ </div>
 }
-
-createRoot(document.getElementById('root')!).render(<StrictMode><HashRouter><Portfolio /></HashRouter></StrictMode>)
+createRoot(document.getElementById('root')!).render(<StrictMode><Portfolio/></StrictMode>)
