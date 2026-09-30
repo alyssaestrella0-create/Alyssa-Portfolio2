@@ -61,14 +61,14 @@ export function BarrelPanel() {
 /** The systems as a logo-first grid, in a scrolling window. */
 export function AIWindow() {
   return (
-    <SectionWindow label="Your systems">
+    <SectionWindow label="Alyssa · systems & tools">
       <AIStackGrid />
     </SectionWindow>
   )
 }
 export function AppsWindow() {
   return (
-    <SectionWindow label="Your apps">
+    <SectionWindow label="Alyssa · work platforms">
       <AppsSection />
     </SectionWindow>
   )
@@ -79,10 +79,10 @@ export function PlanPanel() {
   return (
     <div className="ppanel ppanel--frame">
       <FrameBar
-        host="yourdomain.com"
-        path="/sample-plan"
+        host="alyssaestrella.portfolio"
+        path="/process-documentation"
       />
-      <LiveFrame src="/placeholders/sample-plan.html" title="Sample document" />
+      <LiveFrame src="/placeholders/sample-plan.html" title="Process documentation sample" />
     </div>
   )
 }
@@ -92,16 +92,16 @@ export function PlanPanel() {
 type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
 
 const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Featured Project One', src: '/placeholders/sample-plan.html?doc=1', path: '/featured-one', Icon: Ticket },
-  { id: 'framework', label: 'Featured Project Two', src: '/placeholders/sample-plan.html?doc=2', path: '/featured-two', Icon: Robot },
-  { id: 'workflow', label: 'Featured Project Three', src: '/placeholders/sample-plan.html?doc=3', path: '/featured-three', Icon: FlowArrow },
+  { id: 'ticketing', label: 'Field Service Operations & Dispatch', src: '/placeholders/sample-plan.html?doc=1', path: '/field-service-operations', Icon: Ticket },
+  { id: 'framework', label: 'Real Estate CRM & Lead Management', src: '/placeholders/sample-plan.html?doc=2', path: '/real-estate-crm', Icon: Robot },
+  { id: 'workflow', label: 'SOPs & Process Documentation', src: '/placeholders/sample-plan.html?doc=3', path: '/process-documentation', Icon: FlowArrow },
 ]
 
 /** One build, framed, open on arrival. */
 function BuildPanel({ build }: { build: Build }) {
   return (
     <div className="ppanel ppanel--frame">
-      <FrameBar host="yourdomain.com" path={build.path} />
+      <FrameBar host="alyssaestrella.portfolio" path={build.path} />
       <LiveFrame src={build.src} title={build.label} />
     </div>
   )
