@@ -67,8 +67,6 @@ const APP_SHOTS = [
   OLD + 'leadlist.png',
 ]
 
-const BUILD_DESC = 'Selected examples of the operational, customer, CRM, documentation, and digital work I support.'
-
 /** The three featured builds: each its own card in the stack, each its own
  *  pop-up. */
 const BUILDS: Project[] = [
