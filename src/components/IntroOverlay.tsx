@@ -55,10 +55,7 @@ const STEPS = [
   { label: 'Close the loop', trigger: false, d: 'M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12M16 3v4M8 3v4M4 11h16M9 16l2 2l4 -4' },
 ] as const
 
-const shouldRun =
-  typeof window !== 'undefined' &&
-  !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-  (window.location.pathname === '/' || window.location.pathname.endsWith('/Alyssa-Portfolio2/'))
+const shouldRun = false
 
 // Two classes, because the page and the headline are handed back at different
 // moments: `is-intro` holds the whole page, `is-intro-head` holds only the real
