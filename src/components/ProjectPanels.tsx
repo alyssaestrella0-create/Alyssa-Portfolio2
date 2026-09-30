@@ -1,153 +1,61 @@
-import { useEffect, useState, type ReactNode } from 'react'
-import { Ticket, Robot, FlowArrow, type Icon } from '@/components/slab'
-import { lazy, Suspense } from 'react'
+import type { ReactNode } from 'react'
 import WorkflowSamples from './WorkflowSamples'
 import AIStackGrid from './AIStackGrid'
 import { AppsSection } from './Projects'
-import { useFunnelModal } from './FunnelModal'
-import { websiteFunnel } from '@/data/funnels'
 
-const FunnelBarrel = lazy(() => import('./FunnelBarrel'))
+const OLD = 'https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/'
 
-/**
- * What the Projects dialogs show. Each panel is the work itself, on screen
- * the moment the dialog opens - no section chrome to read past and no second
- * dialog to click into.
- */
-
-/** Only the strip of macOS windows, drifting on the backdrop. No window. */
-export function AutomationsPanel() {
-  return (
-    <div className="ppanel ppanel--strip">
-      <WorkflowSamples />
-    </div>
-  )
-}
-
-/** A plain mac window with a scrolling body, for the sections that are
- *  pages rather than frames. */
 function SectionWindow({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div className="ppanel ppanel--window">
       <div className="ppanel__bar">
-        <span className="ppanel__dots" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-        <span className="ppanel__url">
-          <span className="ppanel__url-host">{label}</span>
-        </span>
+        <span className="ppanel__dots" aria-hidden="true"><i /><i /><i /></span>
+        <span className="ppanel__url"><span className="ppanel__url-host">{label}</span></span>
       </div>
       <div className="ppanel__scroll">{children}</div>
     </div>
   )
 }
 
-/** Only the barrel, spinning on the backdrop. Its own page preview still
- *  stacks above (z 9000). */
+function WorkSample({ label, image, description }: { label: string; image: string; description: string }) {
+  return (
+    <SectionWindow label={label}>
+      <div style={{ padding: '1.25rem', display: 'grid', gap: '1rem' }}>
+        <img src={OLD + image} alt={label} style={{ width: '100%', borderRadius: '12px', display: 'block' }} />
+        <p style={{ margin: 0, lineHeight: 1.7 }}>{description}</p>
+      </div>
+    </SectionWindow>
+  )
+}
+
+export function AutomationsPanel() {
+  return <div className="ppanel ppanel--strip"><WorkflowSamples /></div>
+}
+
 export function BarrelPanel() {
-  const { openFull, modal } = useFunnelModal()
-  return (
-    <div className="ppanel ppanel--barrel">
-      <Suspense fallback={<div className="funnels__barrel-skeleton" aria-hidden="true" />}>
-        <FunnelBarrel funnels={websiteFunnel} onOpen={openFull} />
-      </Suspense>
-      {modal}
-    </div>
-  )
+  return <WorkSample label="Website & Local SEO Support" image="websitehomepage.png" description="Website updates, service-area content, local SEO tracking, metadata and indexing support, business listings, and ongoing visibility work." />
 }
 
-/** The systems as a logo-first grid, in a scrolling window. */
 export function AIWindow() {
-  return (
-    <SectionWindow label="Alyssa · systems & tools">
-      <AIStackGrid />
-    </SectionWindow>
-  )
+  return <SectionWindow label="Alyssa · systems & tools"><AIStackGrid /></SectionWindow>
 }
+
 export function AppsWindow() {
-  return (
-    <SectionWindow label="Alyssa · work platforms">
-      <AppsSection />
-    </SectionWindow>
-  )
+  return <SectionWindow label="Alyssa · work platforms"><AppsSection /></SectionWindow>
 }
 
-/** The plan document, full height, straight away. */
 export function PlanPanel() {
-  return (
-    <div className="ppanel ppanel--frame">
-      <FrameBar
-        host="alyssaestrella.portfolio"
-        path="/process-documentation"
-      />
-      <LiveFrame src="/placeholders/sample-plan.html" title="Process documentation sample" />
-    </div>
-  )
+  return <WorkSample label="Process Documentation" image="sop%20playbook.png" description="SOPs, checklists, training guides, trackers, and recurring reports created to make operational work easier to follow and less likely to be missed." />
 }
 
-/** `src` is a local page framed in the panel; `path` is what the fake
- *  address bar shows. Point these at your own pages. */
-type Build = { id: string; label: string; src: string; path: string; Icon: Icon }
-
-const BUILDS: Build[] = [
-  { id: 'ticketing', label: 'Field Service Operations & Dispatch', src: '/placeholders/sample-plan.html?doc=1', path: '/field-service-operations', Icon: Ticket },
-  { id: 'framework', label: 'Real Estate CRM & Lead Management', src: '/placeholders/sample-plan.html?doc=2', path: '/real-estate-crm', Icon: Robot },
-  { id: 'workflow', label: 'SOPs & Process Documentation', src: '/placeholders/sample-plan.html?doc=3', path: '/process-documentation', Icon: FlowArrow },
-]
-
-/** One build, framed, open on arrival. */
-function BuildPanel({ build }: { build: Build }) {
-  return (
-    <div className="ppanel ppanel--frame">
-      <FrameBar host="alyssaestrella.portfolio" path={build.path} />
-      <LiveFrame src={build.src} title={build.label} />
-    </div>
-  )
-}
-export const TicketingPanel = () => <BuildPanel build={BUILDS[0]} />
-export const FrameworkPanel = () => <BuildPanel build={BUILDS[1]} />
-export const WorkflowPanel = () => <BuildPanel build={BUILDS[2]} />
-
-function FrameBar({ host, path }: { host: string; path: string }) {
-  return (
-    <div className="ppanel__bar">
-      <span className="ppanel__dots" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </span>
-      <span className="ppanel__url">
-        <span className="ppanel__url-host">{host}</span>
-        <span className="ppanel__url-path">{path}</span>
-      </span>
-    </div>
-  )
+export function TicketingPanel() {
+  return <WorkSample label="Field Service Operations & Dispatch" image="servicecore%20schedule.png" description="Hands-on support for scheduling, customer communication, technician coordination, ServiceCore records, estimates, invoices, payment follow-up, and daily operational tasks." />
 }
 
-/** Matches `pmodal-panel` (420ms). Same-site frames share the portfolio's
- *  main thread, so loading one mid-animation stalled the open by 100ms+. */
-const FRAME_DELAY_MS = 440
+export function FrameworkPanel() {
+  return <WorkSample label="Real Estate CRM & Lead Management" image="resimplicrm.png" description="REsimpli pipeline upkeep, contact and lead-stage updates, drip campaigns, follow-up support, contract information, property listings, and related administrative work." />
+}
 
-function LiveFrame({ src, title }: { src: string; title: string }) {
-  const [ready, setReady] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    const id = window.setTimeout(() => setMounted(true), FRAME_DELAY_MS)
-    return () => window.clearTimeout(id)
-  }, [])
-  return (
-    <div className="ppanel__stage">
-      {!ready && <div className="ppanel__skeleton" aria-hidden="true" />}
-      {mounted && <iframe
-        className="ppanel__iframe"
-        src={src}
-        title={title}
-        loading="eager"
-        onLoad={() => setReady(true)}
-        data-ready={ready ? 'true' : 'false'}
-      />}
-    </div>
-  )
+export function WorkflowPanel() {
+  return <WorkSample label="SOPs, Trackers & Process Support" image="seoprogresstracker.png" description="Structured documentation and trackers used to organize recurring work, monitor progress, support handoffs, and keep next actions visible." />
 }
