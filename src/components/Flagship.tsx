@@ -93,7 +93,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Home',
     nav: 'announcement',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on the first screen people land on in your product and what it tells them at a glance.',
+      'A daily overview of priorities, customer needs, follow-ups, and the information needed to keep work moving.',
     Icon: House,
   },
   {
@@ -113,7 +113,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Listings',
     nav: 'work',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on a list or feed your product pulls together, where the data comes from and what it saves the user.',
+      'A structured view of opportunities, leads, or records so important details and next actions are easy to find.',
     Icon: Briefcase,
   },
   {
@@ -123,7 +123,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Features',
     nav: 'tools',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on the set of features or tools inside your product, how many there are and which plan they are on.',
+      'A practical toolkit for documentation, research, customer communication, scheduling, reporting, and digital support.',
     Icon: Toolbox,
   },
   {
@@ -133,7 +133,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Search',
     nav: 'desk',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on a search or finder feature, what goes in, what comes out and why the results are useful.',
+      'Research organized into usable results, with the details needed to compare options and decide the next action.',
     Icon: MapPinLine,
   },
 ]
@@ -178,24 +178,24 @@ const UPDATES: Update[] = [
     year: '2026',
     ago: '2 days ago',
     kind: 'New',
-    title: 'PLACEHOLDER - newest update title',
-    text: 'PLACEHOLDER - tell me what to put here: a real changelog entry for your product, what shipped and why it matters to the people using it.',
+    title: 'Customer follow-up completed',
+    text: 'Customer communication was completed and the related record was updated so the next action is clear.',
   },
   {
     date: 'Jan 3',
     year: '2026',
     ago: '4 days ago',
     kind: 'Improved',
-    title: 'PLACEHOLDER - earlier update title',
-    text: 'PLACEHOLDER - tell me what to put here: an improvement you made to an existing feature and what changed for the user.',
+    title: 'CRM records reviewed',
+    text: 'Records were reviewed for accuracy and open follow-ups were organized by priority.',
   },
   {
     date: 'Jan 1',
     year: '2026',
     ago: '6 days ago',
     kind: 'New',
-    title: 'PLACEHOLDER - older update title',
-    text: 'PLACEHOLDER - tell me what to put here: another shipped feature, in one or two plain sentences.',
+    title: 'Process documentation updated',
+    text: 'A recurring workflow was documented with clearer steps, ownership, and follow-up points.',
   },
 ]
 
@@ -205,34 +205,34 @@ const BOARD: { name: string; tasks: Task[] }[] = [
   {
     name: 'To do',
     tasks: [
-      { title: 'PLACEHOLDER task one', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task two', tag: 'Tag' },
-      { title: 'PLACEHOLDER task three', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task four', tag: 'Tag' },
+      { title: 'Confirm customer schedule', tag: 'Tag', mine: true },
+      { title: 'Update CRM records', tag: 'Tag' },
+      { title: 'Review pending follow-ups', tag: 'Tag', mine: true },
+      { title: 'Prepare daily report', tag: 'Tag' },
     ],
   },
   {
     name: 'In progress',
     tasks: [
-      { title: 'PLACEHOLDER task five', tag: 'Tag' },
-      { title: 'PLACEHOLDER task six', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task seven', tag: 'Tag' },
+      { title: 'Coordinate service change', tag: 'Tag' },
+      { title: 'Research vendor options', tag: 'Tag', mine: true },
+      { title: 'Update website content', tag: 'Tag' },
     ],
   },
   {
     name: 'Review',
     tasks: [
-      { title: 'PLACEHOLDER task eight', tag: 'Tag' },
-      { title: 'PLACEHOLDER task nine', tag: 'Tag' },
-      { title: 'PLACEHOLDER task ten', tag: 'Tag', mine: true },
+      { title: 'Check invoice details', tag: 'Tag' },
+      { title: 'Review SOP update', tag: 'Tag' },
+      { title: 'Verify lead information', tag: 'Tag', mine: true },
     ],
   },
   {
     name: 'Done',
     tasks: [
-      { title: 'PLACEHOLDER task eleven', tag: 'Tag', mine: true },
-      { title: 'PLACEHOLDER task twelve', tag: 'Tag' },
-      { title: 'PLACEHOLDER task thirteen', tag: 'Tag' },
+      { title: 'Send customer update', tag: 'Tag', mine: true },
+      { title: 'Complete CRM notes', tag: 'Tag' },
+      { title: 'Close completed task', tag: 'Tag' },
     ],
   },
 ]
@@ -240,16 +240,16 @@ const BOARD: { name: string; tasks: Task[] }[] = [
 type Tool = { name: string; note: string; Icon: Icon; pro?: boolean }
 
 const TOOLS: Tool[] = [
-  { name: 'Feature one', note: 'Short description', Icon: FileArrowUp },
-  { name: 'Feature two', note: 'Short description', Icon: ImageSquare },
-  { name: 'Feature three', note: 'Short description', Icon: FilePdf },
-  { name: 'Feature four', note: 'Short description', Icon: TextAa },
-  { name: 'Feature five', note: 'Short description', Icon: QrCode },
-  { name: 'Feature six', note: 'Short description', Icon: Scissors },
-  { name: 'Feature seven', note: 'Short description', Icon: ArrowsOutSimple },
-  { name: 'Feature eight', note: 'Short description', Icon: Microphone },
-  { name: 'Feature nine', note: 'Short description', Icon: ClosedCaptioning, pro: true },
-  { name: 'Feature ten', note: 'Short description', Icon: MagicWand },
+  { name: 'Document preparation', note: 'Short description', Icon: FileArrowUp },
+  { name: 'Content support', note: 'Short description', Icon: ImageSquare },
+  { name: 'PDF & file handling', note: 'Short description', Icon: FilePdf },
+  { name: 'SOP writing', note: 'Short description', Icon: TextAa },
+  { name: 'Research tracking', note: 'Short description', Icon: QrCode },
+  { name: 'Process cleanup', note: 'Short description', Icon: Scissors },
+  { name: 'Spreadsheet organization', note: 'Short description', Icon: ArrowsOutSimple },
+  { name: 'Communication support', note: 'Short description', Icon: Microphone },
+  { name: 'Meeting notes', note: 'Short description', Icon: ClosedCaptioning, pro: true },
+  { name: 'AI-assisted drafting', note: 'Short description', Icon: MagicWand },
 ]
 
 const TOOL_FILTERS = ['All 10', 'Group A', 'Group B', 'Group C', 'Group D', 'Group E']
@@ -265,11 +265,11 @@ type Job = {
 }
 
 const JOBS: Job[] = [
-  { source: 'Src A', tone: 'olj', title: 'PLACEHOLDER listing one', rate: 'Detail', posted: '2h ago', state: 'Applied' },
-  { source: 'Src B', tone: 'linkedin', title: 'PLACEHOLDER listing two', rate: 'Detail', posted: '5h ago', state: 'Saved' },
-  { source: 'Src C', tone: 'jobstreet', title: 'PLACEHOLDER listing three', rate: 'Detail', posted: '6h ago', state: 'New' },
-  { source: 'Src A', tone: 'olj', title: 'PLACEHOLDER listing four', rate: 'Detail', posted: '9h ago', state: 'Saved' },
-  { source: 'Src B', tone: 'linkedin', title: 'PLACEHOLDER listing five', rate: 'Detail', posted: '1d ago', state: 'New' },
+  { source: 'Src A', tone: 'olj', title: 'Customer Support & Operations', rate: 'Detail', posted: '2h ago', state: 'Applied' },
+  { source: 'Src B', tone: 'linkedin', title: 'Administrative Support', rate: 'Detail', posted: '5h ago', state: 'Saved' },
+  { source: 'Src C', tone: 'jobstreet', title: 'Real Estate Operations', rate: 'Detail', posted: '6h ago', state: 'New' },
+  { source: 'Src A', tone: 'olj', title: 'CRM & Lead Support', rate: 'Detail', posted: '9h ago', state: 'Saved' },
+  { source: 'Src B', tone: 'linkedin', title: 'Executive & Digital Support', rate: 'Detail', posted: '1d ago', state: 'New' },
 ]
 
 type Lead = {
@@ -282,11 +282,11 @@ type Lead = {
 }
 
 const LEADS: Lead[] = [
-  { name: 'PLACEHOLDER result one', place: 'Location', rating: '4.8', reviews: '212', score: 91, angle: 'Tag' },
-  { name: 'PLACEHOLDER result two', place: 'Location', rating: '4.6', reviews: '148', score: 84, angle: 'Tag' },
-  { name: 'PLACEHOLDER result three', place: 'Location', rating: '4.4', reviews: '96', score: 72, angle: 'Tag' },
-  { name: 'PLACEHOLDER result four', place: 'Location', rating: '4.9', reviews: '61', score: 65, angle: 'Tag' },
-  { name: 'PLACEHOLDER result five', place: 'Location', rating: '4.2', reviews: '44', score: 58, angle: 'Tag' },
+  { name: 'Vendor option A', place: 'Location', rating: '4.8', reviews: '212', score: 91, angle: 'Tag' },
+  { name: 'Vendor option B', place: 'Location', rating: '4.6', reviews: '148', score: 84, angle: 'Tag' },
+  { name: 'Local opportunity', place: 'Location', rating: '4.4', reviews: '96', score: 72, angle: 'Tag' },
+  { name: 'Lead prospect', place: 'Location', rating: '4.9', reviews: '61', score: 65, angle: 'Tag' },
+  { name: 'Research result', place: 'Location', rating: '4.2', reviews: '44', score: 58, angle: 'Tag' },
 ]
 
 /* ---- The app shell. Every slide renders inside this, so switching tabs
@@ -303,7 +303,7 @@ function Shell({ tab, children }: { tab: FlagshipTab; children: React.ReactNode 
             <Sparkle weight="fill" size="1.05em" />
           </span>
           <span className="flagship__wordmark">
-            Product<span className="flagship__wordmark-accent">Name</span>
+            Alyssa<span className="flagship__wordmark-accent">Ops</span>
           </span>
           <span className="flagship__collapse">
             <CaretLeft weight="bold" size="0.8em" />
@@ -412,7 +412,7 @@ function AnnouncementMock() {
       <PageHead
         kicker="Monday, January 5"
         title="Good morning, User."
-        sub="PLACEHOLDER status line."
+        sub="Customer requests, follow-ups, and priorities in one place."
       />
 
       <div className="flagship__card" style={{ ['--i' as string]: 3 }}>
@@ -423,7 +423,7 @@ function AnnouncementMock() {
         <div className="flagship__card-body">
           <CheckCircle weight="fill" size="1.15em" className="flagship__ok" />
           <span>
-            PLACEHOLDER - the main status message your dashboard shows.
+            Review priority customer messages, today’s scheduled work, and open follow-ups before moving into routine tasks.
           </span>
         </div>
         <div className="flagship__card-foot">
@@ -475,8 +475,8 @@ function DeskMock() {
     <>
       <PageHead
         kicker="Monday, January 5"
-        title="PLACEHOLDER board heading."
-        sub="PLACEHOLDER - one line on what this board holds."
+        title="Operations task board."
+        sub="Customer requests, scheduling, CRM updates, research, documentation, and follow-ups."
       />
       <div className="flagship__board">
         {BOARD.map((col, i) => (
