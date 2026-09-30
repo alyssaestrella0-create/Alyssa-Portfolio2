@@ -103,7 +103,7 @@ const TABS: FlagshipTab[] = [
     pageTitle: 'Board',
     nav: 'desk',
     caption:
-      'PLACEHOLDER - tell me what to put here: one or two sentences on your product\'s main workspace (a board, editor or dashboard) and what people do there every day.',
+      'A simple task board for organizing priorities, ownership, status, and the next action across day-to-day operations.',
     Icon: Kanban,
   },
   {
@@ -732,7 +732,7 @@ type FlagshipProps = {
   eyebrow?: string
 }
 
-export default function Flagship({ eyebrow = '12 / Flagship build' }: FlagshipProps = {}) {
+export default function Flagship({ eyebrow = '12 / Workflow demo' }: FlagshipProps = {}) {
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const [inView, setInView] = useState(true)
