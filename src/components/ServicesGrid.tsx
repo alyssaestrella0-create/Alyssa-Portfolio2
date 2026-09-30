@@ -28,27 +28,9 @@ type Stage = {
 }
 
 const STAGES: Stage[] = [
-  {
-    index: '01',
-    label: 'Step 1',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
-    Icon: MagnetStraight,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3', 'Tag 4'],
-  },
-  {
-    index: '02',
-    label: 'Step 2',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
-    Icon: Timer,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
-  },
-  {
-    index: '03',
-    label: 'Step 3',
-    body: 'PLACEHOLDER - one line on the result the client gets.',
-    Icon: Trophy,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
-  },
+  { index: '01', label: 'Understand', body: 'Get clear on the customer, task, priority, and the system it belongs in.', Icon: MagnetStraight, chips: ['Customers', 'Inbox', 'CRM', 'Priorities'] },
+  { index: '02', label: 'Coordinate', body: 'Keep communication, schedules, records, and follow-ups moving across the right people.', Icon: Timer, chips: ['Scheduling', 'Updates', 'Vendors'] },
+  { index: '03', label: 'Close the loop', body: 'Document the outcome, update the system, and make sure the next action is not missed.', Icon: Trophy, chips: ['Follow-up', 'Documentation', 'Reporting'] },
 ]
 
 /* ---------- The services ---------- */
@@ -76,50 +58,12 @@ type Service = {
   bullets: string[]
 }
 
-const BULLETS = ['PLACEHOLDER benefit 1', 'PLACEHOLDER benefit 2', 'PLACEHOLDER benefit 3']
-const SERVICE_DESC = 'PLACEHOLDER - one line on this service.'
-
 const SERVICES: Service[] = [
-  {
-    index: '01',
-    title: 'Service One',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, REACT, TAILWIND],
-    bullets: BULLETS,
-  },
-  {
-    index: '02',
-    title: 'Service Two',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, N8N, OPENAI],
-    bullets: BULLETS,
-  },
-  {
-    index: '03',
-    title: 'Service Three',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, GWS, SLACK],
-    bullets: BULLETS,
-  },
-  {
-    index: '04',
-    title: 'Service Four',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [REACT, VITE, CLOUDFLARE],
-    bullets: BULLETS,
-  },
-  {
-    index: '05',
-    title: 'Service Five',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [CLAUDE_CODE, EXPO, CHROME],
-    bullets: BULLETS,
-  },
+  { index: '01', title: 'Customer Support', description: 'Clear, professional support across chat, email, customer updates, and issue follow-up.', chip: 'Customer Experience', logos: [INTERCOM, GWS], bullets: ['Email & chat support', 'Issue follow-up & escalation', 'Customer record accuracy'] },
+  { index: '02', title: 'Business Operations', description: 'Day-to-day coordination that keeps service work, schedules, and priorities organized.', chip: 'Operations', logos: [GWS, SLACK], bullets: ['Scheduling & coordination', 'Technician/vendor follow-up', 'Daily trackers & reporting'] },
+  { index: '03', title: 'CRM & Lead Support', description: 'Clean pipelines, accurate records, consistent follow-ups, and organized lead activity.', chip: 'CRM', logos: [INTERCOM, GWS], bullets: ['CRM updates', 'Lead follow-up', 'Pipeline organization'] },
+  { index: '04', title: 'Admin & Executive Support', description: 'Reliable administrative support for busy founders, managers, and remote teams.', chip: 'Admin', logos: [GWS, SLACK], bullets: ['Inbox & task support', 'Research & documentation', 'SOPs & checklists'] },
+  { index: '05', title: 'Digital Support', description: 'Practical support for websites, local SEO, social content, listings, and online research.', chip: 'Digital', logos: [OPENAI, GWS, CHROME], bullets: ['Wix & website updates', 'Local SEO & listings', 'Content & research support'] },
 ]
 
 /** The tool marks, stacked horizontally on white tiles (same as Projects). */
@@ -143,10 +87,10 @@ export default function ServicesGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">Services</span>
         <h1 className="pgrid__title" id="services-title">
-          Your services headline, in one short line.
+          Support that keeps the customer experience and the operation moving.
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you offer.
+          Flexible support across customers, operations, CRM, administration, and digital work.
         </p>
       </header>
 
@@ -155,14 +99,14 @@ export default function ServicesGrid() {
             in order on the right with a signal running them. */}
         <div className="sgrid__method" aria-labelledby="method-title">
           <div className="sgrid__method-copy">
-            <span className="sgrid__method-eyebrow">Your Method</span>
+            <span className="sgrid__method-eyebrow">How I Work</span>
             <h2 className="sgrid__method-title" id="method-title">
               One. Two. Three.
               <br />
               <span>Your method, in three steps.</span>
             </h2>
             <p className="sgrid__method-sub">
-              PLACEHOLDER - one sentence on why your method works.
+              I keep the right information in the right place, communicate clearly, and follow tasks through to completion.
             </p>
           </div>
 
@@ -191,8 +135,8 @@ export default function ServicesGrid() {
         {/* Five cards, each carrying the marks of what it is built with. */}
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
-            <h2 className="sgrid__offers-title">Your services, listed.</h2>
-            <p className="sgrid__offers-sub">PLACEHOLDER - one short nudge.</p>
+            <h2 className="sgrid__offers-title">Ways I can support your team.</h2>
+            <p className="sgrid__offers-sub">Built around the work I already handle in real remote operations.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (
@@ -224,10 +168,10 @@ export default function ServicesGrid() {
         <div className="sgrid__flow">
           <header className="sgrid__flow-head">
             <div className="sgrid__flow-copy">
-              <span className="sgrid__flow-eyebrow">Live automation</span>
-              <h2 className="sgrid__flow-title">Your automation headline.</h2>
+              <span className="sgrid__flow-eyebrow">Workflow example</span>
+              <h2 className="sgrid__flow-title">Organized work from request to follow-up.</h2>
               <p className="sgrid__flow-sub">
-                PLACEHOLDER - tell me what to put here: one sentence on what this example automation does for a client.
+                A visual example of how I think about incoming work: capture it, route it, update the record, and make sure the next action happens.
               </p>
             </div>
             <ul className="sgrid__flow-tools" role="list" aria-label="Tools that power this flow">
