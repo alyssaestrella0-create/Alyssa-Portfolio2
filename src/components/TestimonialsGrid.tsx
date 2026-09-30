@@ -37,9 +37,9 @@ const CLIPS: Clip[] = [
     id: 'clip-1',
     index: '01',
     src: '',
-    poster: '/placeholders/testimonial-1.jpg',
+    poster: 'https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/servicecore%20schedule.png',
     duration: '0:00',
-    kicker: 'Client testimonial',
+    kicker: 'Work sample',
     width: 720,
     height: 1080,
   },
@@ -47,9 +47,9 @@ const CLIPS: Clip[] = [
     id: 'clip-2',
     index: '02',
     src: '',
-    poster: '/placeholders/testimonial-2.jpg',
+    poster: 'https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/resimplicrm.png',
     duration: '0:00',
-    kicker: 'Client testimonial',
+    kicker: 'Work sample',
     width: 720,
     height: 1080,
   },
@@ -103,7 +103,7 @@ export default function TestimonialsGrid() {
   return (
     <section className="pgrid tgrid" aria-labelledby="testimonials-title">
       <header className="pgrid__head">
-        <span className="pgrid__eyebrow">Testimonials</span>
+        <span className="pgrid__eyebrow">Experience</span>
         <h1 className="pgrid__title" id="testimonials-title">
           Experience across customers, operations, and remote teams.
         </h1>
@@ -129,7 +129,7 @@ export default function TestimonialsGrid() {
                 controls
                 autoPlay
                 playsInline
-                aria-label={`Video testimonial ${clip.index} from a client`}
+                aria-label={`Work sample ${clip.index} from a client`}
               />
             ) : (
               <button
@@ -139,8 +139,8 @@ export default function TestimonialsGrid() {
                 disabled={!hasVideo}
                 aria-label={
                   hasVideo
-                    ? `Play client testimonial ${clip.index}, ${clip.duration}`
-                    : `Client testimonial ${clip.index}, no video added yet`
+                    ? `Play work sample ${clip.index}, ${clip.duration}`
+                    : `Work sample ${clip.index}, no video added yet`
                 }
               >
                 <img
@@ -172,7 +172,7 @@ export default function TestimonialsGrid() {
 
           {/* The picker is one segmented control, not two loose chips: two
               cells on a shared plate, the active one lit. */}
-          <div className="tgrid__picker" role="group" aria-label="Choose a testimonial">
+          <div className="tgrid__picker" role="group" aria-label="Choose a work sample">
             {CLIPS.map((c, i) => (
               <button
                 key={c.id}
@@ -185,7 +185,7 @@ export default function TestimonialsGrid() {
                   <img src={c.poster} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span className="tgrid__pick-copy">
-                  <span className="tgrid__pick-kicker">Testimonial {c.index}</span>
+                  <span className="tgrid__pick-kicker">Work sample {c.index}</span>
                   <span className="tgrid__pick-meta">{c.duration}</span>
                 </span>
               </button>
