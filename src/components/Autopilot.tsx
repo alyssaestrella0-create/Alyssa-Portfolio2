@@ -87,9 +87,9 @@ const LINKS: Link[] = [
 ]
 
 export const TOOLS: { Icon: Icon; label: string }[] = [
-  { Icon: Plug,           label: 'Your CRM' },
-  { Icon: EnvelopeSimple, label: 'Email & SMS' },
-  { Icon: Sparkle,        label: 'AI Assistant' },
+  { Icon: Plug,           label: 'CRM' },
+  { Icon: EnvelopeSimple, label: 'Customer communication' },
+  { Icon: Sparkle,        label: 'Research & AI tools' },
 ]
 
 const SVGNS = 'http://www.w3.org/2000/svg'
@@ -346,13 +346,12 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
     >
       {!compact && (
       <header className="autopilot__head">
-        <span className="autopilot__eyebrow">Live automation</span>
+        <span className="autopilot__eyebrow">Workflow example</span>
         <h2 id="autopilot-heading" className="autopilot__headline">
-          Your workflow, end to end.
+          Organized work, end to end.
         </h2>
         <p className="autopilot__intro">
-          PLACEHOLDER - tell me what to put here: two or three sentences walking
-          through this example automation, from the trigger to each outcome.
+          This visual shows a practical operations flow: capture an incoming request, communicate clearly, update the record, schedule the next action, and follow through until the work is complete.
         </p>
       </header>
       )}
@@ -364,12 +363,12 @@ export default function Autopilot({ compact = false, maxScale = 1 }: AutopilotPr
             <span className="autopilot__dot autopilot__dot--y" />
             <span className="autopilot__dot autopilot__dot--g" />
           </span>
-          <span className="autopilot__titlebar-label">Automation Workflow</span>
+          <span className="autopilot__titlebar-label">Operations Workflow</span>
         </div>
 
         <div className="autopilot__canvas">
           <p className="autopilot__caption">
-            Your flow caption, in one short line.
+            From incoming request to clear next action and follow-up.
           </p>
 
           <div className="autopilot__board" aria-hidden="true">
