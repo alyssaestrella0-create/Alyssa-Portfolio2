@@ -22,20 +22,20 @@ export default function ToS() {
         </button>
 
         <h1 className="legal-page__title">Terms of Service</h1>
-        <p className="legal-page__updated">Last updated: PLACEHOLDER date</p>
+        <p className="legal-page__updated">Last updated: October 1, 2026</p>
 
         <div className="legal-page__body">
           <h2>Using this site</h2>
-          <p>PLACEHOLDER - tell me what to put here: the basic terms for visiting this site.</p>
+          <p>This website is a professional portfolio provided for informational purposes. You may browse it and contact me about potential work. Please do not misuse the site, attempt to disrupt it, or copy portfolio materials in a misleading way.</p>
 
           <h2>Work and payment</h2>
-          <p>PLACEHOLDER - tell me what to put here: how projects are scoped, billed and delivered.</p>
+          <p>Viewing this portfolio or sending an inquiry does not create a client relationship. Any freelance or employment arrangement, scope, schedule, rate, payment terms, confidentiality requirements, and deliverables must be agreed separately in writing.</p>
 
           <h2>Ownership</h2>
-          <p>PLACEHOLDER - tell me what to put here: who owns the work and the content on this site.</p>
+          <p>Unless otherwise stated, the portfolio copy and presentation are provided as examples of my professional experience. Third-party names, trademarks, platforms, and interface screenshots remain the property of their respective owners. Work samples are shown only to demonstrate relevant experience and may be redacted or limited to protect confidential information.</p>
 
           <h2>Liability</h2>
-          <p>PLACEHOLDER - tell me what to put here: your limits of liability.</p>
+          <p>This portfolio is provided as-is and may be updated over time. I make reasonable efforts to keep the information accurate, but I do not guarantee that every page will always be complete, current, or error-free.</p>
 
           <h2>Contact</h2>
           <p>
