@@ -22,13 +22,16 @@ import { X } from '@/components/slab'
 type Sample = { file: string; label: string }
 
 const SAMPLES: Sample[] = [
-  { file: 'project-1.jpg', label: 'Project Screenshot 1' },
-  { file: 'project-2.jpg', label: 'Project Screenshot 2' },
-  { file: 'project-3.jpg', label: 'Project Screenshot 3' },
-  { file: 'project-4.jpg', label: 'Project Screenshot 4' },
+  { file: 'servicecore%20schedule.png', label: 'ServiceCore Scheduling' },
+  { file: 'servicecore%20customers.png', label: 'ServiceCore Customer Records' },
+  { file: 'resimplicrm.png', label: 'REsimpli CRM' },
+  { file: 'sop%20playbook.png', label: 'SOP Playbook' },
+  { file: 'seoprogresstracker.png', label: 'SEO Progress Tracker' },
+  { file: 'leadlist.png', label: 'Lead Research List' },
 ]
 
-const srcOf = (s: Sample) => `/placeholders/${encodeURIComponent(s.file)}`
+const srcOf = (s: Sample) =>
+  `https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/${s.file}`
 
 export default function WorkflowSamples() {
   const doubled = useMemo(() => [...SAMPLES, ...SAMPLES], [])
@@ -64,7 +67,7 @@ export default function WorkflowSamples() {
   return (
     <section className="wfs" id="workflow-samples" aria-labelledby="wfs-heading" data-reveal>
       <p className="wfs__caption" id="wfs-heading">
-        PLACEHOLDER - tell me what to put here: one line on what these screenshots show.
+        Real work samples from field-service operations, CRM management, process documentation, SEO tracking, and lead research.
       </p>
 
       <div className="wfs__strip">
