@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles/tokens.css'
-import './styles/global.css'\nimport './styles/portfolio.css'
+import './styles/global.css'
+import './styles/portfolio.css'
 
 const OLD='https://raw.githubusercontent.com/alyssaestrella0-create/Alyssa-Portfolio/main/images/'
 const photo=OLD+'ProfessionalPhoto.png'
